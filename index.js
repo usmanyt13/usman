@@ -57,5 +57,20 @@ client.on("message", async message => {
 
 });
 
+client.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.find(ch => ch.name === 'welcome');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    
+
+    const wembed = new RichEmbed()
+.setColor('#6c8cff')
+.setDescription('Welcome To The Server')
+.setTitle('Welcome')
+    // Send the message, mentioning the member
+    channel.send(wembed `${member}`);
+}); 
+
 
 client.login(TOKEN);
