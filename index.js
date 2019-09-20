@@ -69,7 +69,7 @@ client.on('guildMemberAdd', member => {
 .setDescription('Welcome To The Server')
 .setTitle('Welcome')
     // Send the message, mentioning the member
-    channel.send(wembed `${member}`);
+    channel.send(wembed);
 }); 
 
 
