@@ -66,11 +66,16 @@ client.on('guildMemberAdd', member => {
 
     const wembed = new RichEmbed()
 .setColor('#6c8cff')
-.setDescription('Welcome To The Server')
+.setDescription(`Welcome To The Server ${member} Hope You Enjoy Here`)
 .setTitle('Welcome')
-    // Send the message, mentioning the member
+.setThumbnail(member.displayAvatarURL)
+
+.setFooter(member.displayName, member.user.displayAvatarURL);
+
+  
     channel.send(wembed);
 }); 
+
 
 
 client.login(TOKEN);
