@@ -17,17 +17,38 @@ client.aliases = new Collection();
 
 
 client.on("ready", () => {
-    console.log(`Hi, ${client.user.username} is now online in ${client.guilds.size}!`);
+    console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+  
+      var timer;
+  var i = 0;
+    timer = client.setInterval(function () {
+      var gamePresence = [
+        `u!help`,
+        ` ${client.guilds.size} Servers!`,
+        ` ${client.users.size} users!`,
+        ` Bugs ↠ u!support`,
+        `Owner ⇛ !Usmanᵛᵉʳᶦᶠᶦᵉᵈ✓#1496 `	    
+      ];
+      client.user.setPresence({ game: { name: gamePresence[i%gamePresence.length], type: 3 } });
+      i++;
+    },47000);
+  
+  });
 
-    // Set the user presence
-    client.user.setPresence({
-        status: "dnd",
-        game: {
-            name: "Getting Ready | u!help",
-            type: "WATCHING"
-        }
-    }); 
-})
+client.on('message', message => {
+
+   
+    
+    if (message.content === 'Hello') {
+      
+      message.channel.send('How Are You?');
+    }
+    if (message.content === 'Fine') {
+      message.channel.send('So What Can I Do')
+    }
+  });
+
+
 
 
 client.on("message", async message => {
@@ -63,18 +84,19 @@ client.on('guildMemberAdd', member => {
     // Do nothing if the channel wasn't found on this server
     if (!channel) return;
     
-
+    let ffff = member.displayAvatarURL
     const wembed = new RichEmbed()
 .setColor('#6c8cff')
 .setDescription(`Welcome To The Server ${member} Hope You Enjoy Here`)
 .setTitle('Welcome')
-.setThumbnail(member.displayAvatarURL)
+.setThumbnail(ffff)
 
 .setFooter(member.displayName, member.user.displayAvatarURL);
 
   
     channel.send(wembed);
 }); 
+ 
 
 
 
