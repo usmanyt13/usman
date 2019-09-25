@@ -8,8 +8,9 @@ module.exports = {
         
     const embev = new RichEmbed()
     .setTitle('Bot Pings')
-    .addBlankField()
-    .setDescription(`The Bot Ping Are:
+    .
+    .setDescription(`
+     The Bot Ping Are:
 
     ❤ ${Math.round(client.ping)}ms
     `)
