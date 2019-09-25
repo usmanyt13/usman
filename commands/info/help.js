@@ -1,43 +1,66 @@
-//const config = require('../config.json')
+const { RichEmbed, Client} = require('discord.js');
+
+
 module.exports = {
     name:'help',
 run: async (client, message, args, prefix) => {
-message.reply(`
-**These Are The Available Commands:-**
+    
 
-__**Commands**__
 
-__**:construction:Under Construction:construction:**__
+    const hembed = new RichEmbed()
+    .setColor('#59b6eb')
+    .setTitle('Bot Commands')
+    .setDescription(`
+    
+    The Prefix of bot is 'u!':
+    
+    General Bots Commands Are:
 
-Use **u!help_<command>** for details
+    > help:
 
- __**General Commands**__
+     Display This Message
+    
+     > avatar:
+     Display User Avatar
+   
+     > bot info:
+     Display Bot Infomation
+   
+     > ping:
+     Show The Ping of The Bot
+   
+     > support:
+     For Support
+   
+     > serverinfo:
+     Show The Server Information
+   
+     > userinfo:
+     Show The User Info
+     
+     > invitebot:
+     To Get Link To Invite Bot To Your Server
+     
+     `)
 
-> help: Responds With This Message
+     .addField('Moderation Commands', `
+     > announce:
+     For Announcement
 
-> info: Responds With Informations About Bot
+     > ban:
+     To Ban A User
 
-> ping: Responds With The Latency From The Bot
+     > kick:
+     To Kick A User
 
-> serverinfo: Responds Wiht Informations About The Server
+     > tempmute:
+     To Temporary Mute A Member`)
 
-__**Fun Commands**__
-
-> cf/catfacts: Responds With Random Cat Fact
-
-> df/dogfacts: Responds With Radndom Dog Fact
-
-> roll: Roll Dice
-
-> flip: Flip Coin
-
-> RockPaperScissor/rps: Play RPS With Bot
-
-> meme/memes: Responds With Random Memes
-
-> 8ball: Wisdom
-
-u!giveaway <winners> <duration in ms> <prize>\n\n`)
+     .addField('Music Commands', `
+     Music COmmands Will Be Availabe Soon
+     Thanks For Using This Bot`)
+     
+   message.channel.send(hembed) ;
+}
 
 }
-};
