@@ -1,12 +1,19 @@
-  
+const { RichEmbed } = require('discord.js');
+
 module.exports = {
     name: "ping",
     category: "info",
     description: "Returns latency and API ping",
     run: async (client, message, args) => {
-        const msg = await message.channel.send(`🏓 Pinging....`);
+        
+    const embev = new RichEmbed()
+    .setTitle('Bot Pings')
+    .addBlankField()
+    .setDescription(`The Bot Ping Are:
 
-        msg.edit(`🏓 Pinged!
-    ${Math.round(client.ping)}ms`);
+    ❤ ${Math.round(client.ping)}ms
+    `)
+    .setColor('#59b6eb')
+    message.channel.send(embev);
     }
 }
