@@ -1,6 +1,6 @@
 const { Client, RichEmbed, Collection  } = require("discord.js");
 
-const TOKEN = 'NjE5NTcyMDk0Mzc5ODg0NTc0.XYw72g.3YAqkaSmg7IBmdFqncKJmEFATtM';
+//const TOKEN = 'NjE5NTcyMDk0Mzc5ODg0NTc0.XYw72g.3YAqkaSmg7IBmdFqncKJmEFATtM';
 
 const prefix = "u!";
 
@@ -100,4 +100,4 @@ client.on('guildMemberAdd', member => {
 
 
 
-client.login(TOKEN);
+client.login(process.env.TOKEN);
