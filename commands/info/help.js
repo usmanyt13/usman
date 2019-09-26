@@ -59,6 +59,7 @@ run: async (client, message, args, prefix) => {
      .addField('Music Commands', `
      Music COmmands Will Be Availabe Soon
      Thanks For Using This Bot`)
+    .setFooter('Owner ⇛ !Usmanᵛᵉʳᶦᶠᶦᵉᵈ✓#1496')
      
    message.channel.send(hembed) ;
 }
