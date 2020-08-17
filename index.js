@@ -1,7 +1,5 @@
 const { Client, RichEmbed, Collection  } = require("discord.js");
 
-//const TOKEN = 'NjE5NTcyMDk0Mzc5ODg0NTc0.XYw72g.3YAqkaSmg7IBmdFqncKJmEFATtM';
-
 const prefix = "u!";
 
 const client = new Client({
