@@ -1,3 +1,4 @@
+const MessageEmbed = require('discord.js');
 module.exports = {
     name:'avatar',    
     run: async (client, message, args) => {
