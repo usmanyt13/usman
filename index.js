@@ -17,18 +17,13 @@ client.aliases = new Collection();
 client.on("ready", () => {
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   
-      var timer;
-  var i = 0;
-    timer = client.setInterval(function () {
-      var gamePresence = [
-        `u!help`,
-        ` ${client.guilds.size} Servers!`,
-        ` ${client.users.size} users!`,
-        `Owner ⇛ !Usmanᵛᵉʳᶦᶠᶦᵉᵈ✓#1496 `	    
-      ];
-      client.user.setPresence({ game: { name: gamePresence[i%gamePresence.length], type: 3 } });
-      i++;
-    },47000);
+     client.user.setPresence({
+        status: 'dnd',
+        activity: {
+            name: 'Someone',
+            type: 'WATCHING'            
+        }
+    })
   
   });
 
