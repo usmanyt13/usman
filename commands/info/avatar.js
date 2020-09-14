@@ -3,25 +3,23 @@ module.exports = {
     name:'avatar',    
     run: async (client, message, args) => {
         
-      let avmem;
+       let user;
 
-      if(message.mentions.users.first()) {
-          avmem = message.mentions.users.first();
-      
-      }else  {
-          avmem = message.author;
-      };
-
-            let avatar = avmem.displayAvatarURL({dynamic:true, size:4096 });
-
-      
-      const embed = new Discord.MessageEmbed()
-      .setTitle (`${user.tag}`)
-      .setDescription(`**Avatar**`)
-      .setColor('#000000')
-      .setURL(avatar)
-      .setImage(avatar)
-    message.channel.send(embed);
+        if(message.mentions.users.first()) {
+            user = message.mentions.users.first();
+        
+        }else  {
+            user = message.author;
+        };
+  
+        let av = user.displayAvatarURL({dynamic:true, size:4096});
+        const embed = new Discord.MessageEmbed()
+        .setTitle (`${user.tag}`)
+        .setDescription(`**Avatar**`)
+        .setColor('#000000')
+        .setURL(av)
+        .setImage(av)
+      message.channel.send(embed);
     }
 
     };
