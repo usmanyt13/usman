@@ -3,16 +3,16 @@ module.exports = {
     name:'avatar',    
     run: async (client, message, args) => {
         if(message.content === `u!avatar`){
-      let user;
+      let avmem;
 
       if(message.mentions.users.first()) {
-          user = message.mentions.users.first();
+          avmem = message.mentions.users.first();
       
       }else  {
-          user = message.author;
+          avmem = message.author;
       };
 
-      const avatar = user.displayAvatarURL({dynamic:true, size:4096 });
+      const avatar = avmem.displayAvatarURL({dynamic:true,size:4096});
       
       const embed = new Discord.MessageEmbed()
       .setTitle (`${user.tag}`)
