@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     name:'avatar',    
     run: async (client, message, args) => {
-        if(message.content === `u!avatar`){
+        
       let avmem;
 
       if(message.mentions.users.first()) {
