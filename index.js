@@ -24,7 +24,6 @@ client.on("ready", () => {
         `u!help`,
         ` ${client.guilds.size} Servers!`,
         ` ${client.users.size} users!`,
-        ` Bugs ↠ u!support`,
         `Owner ⇛ !Usmanᵛᵉʳᶦᶠᶦᵉᵈ✓#1496 `	    
       ];
       client.user.setPresence({ game: { name: gamePresence[i%gamePresence.length], type: 3 } });
