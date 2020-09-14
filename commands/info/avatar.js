@@ -12,13 +12,14 @@ module.exports = {
           user = message.author;
       };
 
-      let av = user.displayAvatarURL({dynamic:true, size:4096 });
+      const avatar = user.displayAvatarURL({dynamic:true, size:4096 });
+      
       const embed = new Discord.MessageEmbed()
       .setTitle (`${user.tag}`)
       .setDescription(`**Avatar**`)
       .setColor('#000000')
-      .setURL(av)
-      .setImage(av)
+      .setURL(avatar)
+      .setImage(avatar)
     message.channel.send(embed);
     }
 
