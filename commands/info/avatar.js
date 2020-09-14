@@ -12,7 +12,8 @@ module.exports = {
           avmem = message.author;
       };
 
-      const avatar = avmem.displayAvatarURL({dynamic:true,size:4096});
+            let avatar = avmem.displayAvatarURL({dynamic:true, size:4096 });
+
       
       const embed = new Discord.MessageEmbed()
       .setTitle (`${user.tag}`)
