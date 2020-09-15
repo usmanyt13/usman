@@ -14,18 +14,18 @@ client.aliases = new Collection();
 });
 
 
-client.on("ready", () => {
-    console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
-  
-     client.user.setPresence({
-        status: 'dnd',
-        activity: {
-            name: 'Someone',
-            type: 'WATCHING'            
-        }
-    })
-  
-  });
+client.once('ready', () =>{
+    console.log('I iz Online!');
+
+    client.user.setActivity("Someone", {type: "WATCHING"})
+
+    client.guilds.cache.forEach((guild) => {
+        console.log(guild.name)
+        guild.channels.cache.forEach((channel) => {
+            console.log(` - ${channel.name} ${channel.type} ${channel.id}`)
+        })
+
+    });
 
 client.on('message', message => {
 
@@ -89,6 +89,29 @@ client.on('guildMemberAdd', member => {
     channel.send(wembed);
 }); 
  
+client.on('message', msg => {
+  if(msg.content === `${prefix}avatar`) {
+    let avmem;
+
+        if(msg.mentions.users.first()) {
+            avmem = msg.mentions.users.first();
+        
+        }else  {
+            avmem = msg.author;
+        };
+
+        const av = avmem.displayAvatarURL;
+
+        const embed = new RichEmbed()
+        .setTitle (`${avmem.tag}`)
+        .setDescription(`**Avatar**`)
+        .setColor('#000000')
+        .setURL(av)
+        .setImage(av)
+    msg.channel.send(embed);
+  }
+});
+
 
 
 
