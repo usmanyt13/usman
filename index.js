@@ -18,14 +18,9 @@ client.once('ready', () =>{
     console.log('I iz Online!');
 
     client.user.setActivity("Someone", {type: "WATCHING"})
+    client.user.setStatus('dnd')
 
-    client.guilds.cache.forEach((guild) => {
-        console.log(guild.name)
-        guild.channels.cache.forEach((channel) => {
-            console.log(` - ${channel.name} ${channel.type} ${channel.id}`)
-        })
-
-    });
+  });
 
 client.on('message', message => {
 
